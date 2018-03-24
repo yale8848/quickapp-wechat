@@ -1,0 +1,32 @@
+<template>
+<div id="main">
+
+</div>
+</template>
+<style>
+
+    #main{
+        background-image: url(/Common/Image/lanucher.jpg);
+        background-size: cover;
+    }
+
+</style>
+<script>
+
+    import router from '@system.router'
+
+
+
+
+  export default {
+    onInit () {
+        setTimeout(function(){
+    router.push ({
+        uri: '/Main'
+      })
+  },1000)
+    }
+  }
+
+
+</script>

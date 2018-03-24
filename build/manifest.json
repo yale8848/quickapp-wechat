@@ -1,0 +1,71 @@
+{
+  "package": "com.application.demo",
+  "name": "quickapp-wechat",
+  "versionName": "1.0.0",
+  "versionCode": "1",
+  "minPlatformVersion": "101",
+  "icon": "/Common/Image//logo.png",
+  "features": [
+    {
+      "name": "system.prompt"
+    },
+    {
+      "name": "system.router"
+    },
+    {
+      "name": "system.shortcut"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {
+    "logLevel": "debug"
+  },
+  "router": {
+    "entry": "Welcome",
+    "pages": {
+      "Welcome": {
+        "component": "index"
+      },
+      "Main": {
+        "component": "index"
+      },
+      "Demo": {
+        "component": "index"
+      },
+      "DemoDetail": {
+        "component": "index"
+      },
+      "About": {
+        "component": "index"
+      }
+    }
+  },
+  "display": {
+    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarTextColor": "#414141",
+    "menu": true,
+    "pages": {
+      "Welcome": {
+        "fullScreen": true,
+        "titleBar": false
+      },
+      "Main": {
+        "titleBar": false
+      },
+      "Demo": {
+        "titleBarText": "示例页",
+        "menu": false
+      },
+      "DemoDetail": {
+        "titleBarText": "详情页"
+      },
+      "About": {
+        "menu": false
+      }
+    }
+  }
+}

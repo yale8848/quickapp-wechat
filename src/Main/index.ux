@@ -1,0 +1,144 @@
+<template>
+    <div id="main">
+        <div id="title">
+            <text id="name">微信</text>
+            <div class="actions">
+                    <div class="search"></div>
+                    <div class="plus"></div>
+            </div>
+        </div>
+        <div id="container">
+                <tabs onchange="changeTabactive" index="{{currentIndex}}">
+                        <tab-content class="flexible-tab-content">
+                          <div class="tab-content-section">
+                            <text>微信</text>
+                          </div>
+                          <div class="tab-content-section">
+                            <text>通信录</text>
+                          </div>
+                          <div class="tab-content-section">
+                            <text>发现</text>
+                          </div>
+                          <div class="tab-content-section">
+                                <text>我</text>
+                              </div>
+                        </tab-content>
+                      </tabs>
+ 
+
+        </div>
+        <div id="tab">
+              
+                <div for="{{(index, item) in tabItems}}" class="tab-item" onclick="clickTabBar(index)">
+                        <image class="tab-icon" src="{{item.icons[currentIndex === index ? 1 : 0]}}"></image>
+                        <text class="{{currentIndex === index ? 'active' : 'tab-text'}}">{{item.name}}</text>
+                      </div>
+        </div>
+    </div>
+    </template>
+    <style>
+
+
+    #main{
+        flex-direction: column;
+    }
+    #title{
+        background-color:#272727;
+        height: 100px;
+        align-items: center;
+        justify-content:space-between
+        
+    }
+    #title>#name{
+        font-size: 48px;
+        margin-left: 40px;
+        color: #FFFFFF;
+
+    }
+
+    #title>.actions{
+        height: 100%;
+        align-items: center;
+        margin-right: 50px;
+    }
+    .search{
+        width: 50px;
+        height: 50px;
+        background-image: url(/Common/Image/search.png);
+        margin-right: 50px;
+    }
+    .plus{
+        width: 40px;
+        height: 40px;
+        background-image: url(/Common/Image/plus.png);
+    }
+    #container{
+        background-color:#aaaaaa;
+        flex-grow:1;
+        justify-content: center;
+        align-items: center;
+    }
+    #tab{
+        height: 110px;
+    }
+    #tab .active{
+
+        color: #008000
+
+    }
+    .tab-item{
+       background-color: #ffffff;
+       height: 100%;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       flex-grow: 1;
+   }
+   .tab-item text{
+       color: #000000;
+       font-size: 30px;
+       lines:1;
+       
+   }
+    
+    </style>
+    <script>
+  import router from '@system.router'
+
+export default {
+  data: {
+    currentIndex: 0,
+    tabItems: [
+            {
+              name: '微信',
+              icons: ['/Common/Image/weixin_normal.png', '/Common/Image/weixin_pressed.png']
+            },
+            {
+              name: '通信录',
+              icons: ['/Common/Image/contact_list_normal.png', '/Common/Image/contact_list_pressed.png']
+            }
+            ,
+            {
+              name: '发现',
+              icons: ['/Common/Image/find_normal.png', '/Common/Image/find_pressed.png']
+            }
+            ,
+            {
+              name: '我',
+              icons: ['/Common/Image/profile_normal.png', '/Common/Image/profile_pressed.png']
+            }
+          ]
+  },
+  changeTabactive (evt) {
+    this.currentIndex = evt.index
+  },
+  clickTabBar (index) {
+    this.currentIndex = index
+  },
+  routePage (param) {
+    router.push({
+      uri: param
+    })
+  }
+}
+    </script>
