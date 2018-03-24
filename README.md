@@ -4,7 +4,7 @@
 
 还在开发中...
 
-<img src="./assets/demo1.png" style="zoom:30%" />
+<img src="./assets/demo1.png" width="50%" height="50%" />
 
 ## 快应用不支持CSS属性列表：
 - font-family
