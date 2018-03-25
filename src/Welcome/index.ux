@@ -21,7 +21,7 @@
   export default {
     onInit () {
         setTimeout(function(){
-    router.push ({
+    router.replace ({
         uri: '/Main'
       })
   },1000)

@@ -1,3 +1,8 @@
+
+<import name="comp-weixin" src="./weixin"></import>
+<import name="comp-contacts" src="./contacts"></import>
+
+
 <template>
     <div id="main">
         <div id="title">
@@ -11,10 +16,10 @@
                 <tabs onchange="changeTabactive" index="{{currentIndex}}">
                         <tab-content class="flexible-tab-content">
                           <div class="tab-content-section">
-                            <text>微信</text>
+                            <comp-weixin></comp-weixin>
                           </div>
                           <div class="tab-content-section">
-                            <text>通信录</text>
+                              <comp-contacts></comp-contacts>
                           </div>
                           <div class="tab-content-section">
                             <text>发现</text>
@@ -73,13 +78,15 @@
         background-image: url(/Common/Image/plus.png);
     }
     #container{
-        background-color:#aaaaaa;
+        background-color:#ffffff;
         flex-grow:1;
         justify-content: center;
         align-items: center;
     }
     #tab{
         height: 110px;
+        border-top-color: #aaaaaa;
+        border-top-width: 1px;
     }
     #tab .active{
 
@@ -108,6 +115,7 @@
 export default {
   data: {
     currentIndex: 0,
+    showLetters:false,
     tabItems: [
             {
               name: '微信',
@@ -131,9 +139,23 @@ export default {
   },
   changeTabactive (evt) {
     this.currentIndex = evt.index
+    if(this.currentIndex==1){
+
+      this.showLetters=true;
+
+    }else{
+      this.showLetters=false;
+    }
   },
   clickTabBar (index) {
     this.currentIndex = index
+    if(this.currentIndex==1){
+
+this.showLetters=true;
+
+}else{
+this.showLetters=false;
+}
   },
   routePage (param) {
     router.push({
