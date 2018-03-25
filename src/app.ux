@@ -3,6 +3,9 @@
    * 应用级别的配置，供所有页面公用
    */
   import util from './util'
+  const globalRef = global.__proto__ || global
+
+globalRef.regeneratorRuntime = require('babel-runtime/regenerator')
 
   export default {
     showMenu: util.showMenu,

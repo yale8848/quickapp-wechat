@@ -1,0 +1,80 @@
+<template>
+    <div class="weixin-page">
+        <list class="tutorial-page" onscrollbottom="loadMoreData">
+            <!-- 商品列表 -->
+            <block for="weixinList">
+              <list-item type="weixin" class="content-item">
+                  <div class="left">
+                        <image class="img" src="{{$item.img}}"></image>
+                        <div class="texts">
+                                <text class="name">{{$item.name}}</text>
+                                <text class="msg">{{$item.text}}</text>
+                        </div>
+                        
+                  </div>
+                  <div class="right">
+                        <text>{{$item.time}}</text>
+                  </div>
+                
+               
+              </list-item>
+            </block>
+          </list>
+    </div>
+  </template>
+
+  <style>
+      .content-item{
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+          border-bottom-color: #eeeeee;
+          border-bottom-width: 1px;
+
+      }
+      .content-item > .right{
+        flex-direction: column;
+        height: 100%;
+      }
+      .content-item > .right text{
+          color: #aaaaaa;
+          font-size: 30px;
+      }
+      .content-item > .left{
+          align-items: center
+      }
+      .content-item > .left>.img{
+          width: 80px;
+          height: 80px;
+      }
+      .content-item > .left>.texts{
+          flex-direction: column;
+          margin-left: 20px;
+      }
+      .content-item > .left .name{
+          color: #000000;
+          font-size: 36px;
+      }
+      .content-item > .left .msg{
+        font-size: 28px;
+        color: #aaaaaa;
+      }
+
+  </style>
+  <script>
+    // 子组件
+    export default {
+     
+      data: {
+        weixinList:[{img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=75a332731fa281df834a4fb0330be9c6&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2F3307a798-a465-4bef-a756-65e6cdff81b3.jpg",name:"妹子",text:"你好",time:"02:30"},
+                    {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=5c4499224d9c6769161d7fca2d0d5ff9&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F6f061d950a7b0208503bfaae65d9f2d3562cc88b.jpg",name:"妹子",text:"你好",time:"9:14"},
+                    {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=581793290d47478e9f95c0f3fe33c31a&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fb219ebc4b74543a9f0894bc216178a82b9011429.jpg",name:"妹子",text:"你好",time:"10:30"},
+                    {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=2c29152a91042d8b1455db93ac11f3f7&imgtype=0&src=http%3A%2F%2Fp1.qqyou.com%2Ftouxiang%2FUploadPic%2F2015-4%2F16%2F2015041615174376891.jpg",name:"妹子",text:"你好",time:"14:20"},
+                    {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=699fd0c38a27d98d663e5d23cc7042ce&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2Fijivogqq.jpg",name:"妹子",text:"你好",time:"15:11"},
+                    {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=b1798fec677b8a0e24f77027b351ab03&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F20150108%2Fpl73m0q6.jpg",name:"妹子",text:"你好",time:"16:21"},]
+      },
+      onInit () {
+       
+      }
+    }
+  </script>

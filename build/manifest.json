@@ -10,6 +10,9 @@
       "name": "system.prompt"
     },
     {
+      "name": "system.device"
+    },
+    {
       "name": "system.router"
     },
     {
@@ -45,7 +48,7 @@
     }
   },
   "display": {
-    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarBackgroundColor": "#272727",
     "titleBarTextColor": "#414141",
     "menu": true,
     "pages": {

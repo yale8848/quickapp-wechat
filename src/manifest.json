@@ -7,6 +7,7 @@
   "icon": "/Common/Image//logo.png",
   "features": [
     { "name": "system.prompt" },
+    { "name": "system.device" },
     { "name": "system.router" },
     { "name": "system.shortcut" }
   ],
@@ -37,7 +38,7 @@
     }
   },
   "display": {
-    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarBackgroundColor": "#272727",
     "titleBarTextColor": "#414141",
     "menu": true,
     "pages": {

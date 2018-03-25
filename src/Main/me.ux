@@ -1,0 +1,108 @@
+<template>
+
+    <div id="main">
+        <div id="info" class="item">
+            <div>
+                    <image class="head" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=75a332731fa281df834a4fb0330be9c6&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2F3307a798-a465-4bef-a756-65e6cdff81b3.jpg"></image>
+                    <div class="names">
+                        <text class="name">飞天舞</text>
+                        <text class="wname">微信号：feitianwu</text>
+                    </div>
+            </div>
+
+                <image class="qr" src="/Common/Image/qr.png"></image>
+        </div>
+
+        <div class="item item-one">
+                <image class="it-image" src="/Common/Image/icon_me_money.png"></image>
+                <text class="it-name">钱包</text>
+        </div>
+
+        <div class="item">
+                <image class="it-image" src="/Common/Image/icon_me_collect.png"></image>
+                <text class="it-name">收藏</text>
+        </div>
+        <div class="item">
+                <image class="it-image" src="/Common/Image/icon_me_photo.png"></image>
+                <text class="it-name">相册</text>
+        </div>
+        <div class="item">
+                <image class="it-image" src="/Common/Image/icon_me_card.png"></image>
+                <text class="it-name">卡包</text>
+        </div>
+        <div class="item">
+                <image class="it-image" src="/Common/Image/icon_me_smail.png"></image>
+                <text class="it-name">表情</text>
+        </div>
+
+        <div class="item item-one">
+                <image class="it-image" src="/Common/Image/icon_me_setting.png"></image>
+                <text class="it-name">设置</text>
+        </div>
+    </div>
+</template>
+<style>
+    #main{
+        background-color: #dddddd;
+        width: 100%;
+        flex-direction: column
+    }
+    #info{
+        width: 100%;
+        padding-right: 40px;
+        justify-content:space-between;
+        margin-top: 40px;
+
+
+    }
+    .head{
+        width: 120px;
+        height: 120px;
+    }
+    .names{
+        margin-left: 20px;
+        flex-direction: column;
+
+    }
+    .name{
+        font-size: 28px;
+        color: #000000;
+    }
+    .it-name{
+        color: #000000;
+    }
+    .wname{
+        font-size: 24px;
+        margin-top: 10px;
+        color: #cccccc;
+    }
+
+    .qr{
+        width: 50px;
+        height: 50px;
+    }
+    .item{
+        background-color: #ffffff;
+        padding: 20px;
+        align-items: center;
+       
+    }
+    .it-image{
+        width: 50px;
+        height: 50px;
+        margin-left: 18px;
+    }
+    .it-name{
+        margin-left: 30px;
+        font-size: 26px;
+    }
+    .item-one{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+
+</style>
+<script>
+
+</script>

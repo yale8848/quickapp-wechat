@@ -1,0 +1,71 @@
+<template>
+
+    <div id="main">
+
+        <div class="f-items friends">
+            <div>
+                <image class="f-icon" src="/Common/Image/v2.png"></image>
+                <text class="f-text">朋友圈</text>
+            </div>
+
+            <image class="f-icon-r" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=75a332731fa281df834a4fb0330be9c6&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2F3307a798-a465-4bef-a756-65e6cdff81b3.jpg"></image>
+        </div>
+
+        <div class="f-items friends">
+                <div>
+                    <image class="f-icon" src="/Common/Image/icon_de_saoyisao.png"></image>
+                    <text class="f-text">扫一扫</text>
+                </div>
+
+            </div>
+            <div class="f-items f-item-m">
+                    <div>
+                        <image class="f-icon" src="/Common/Image/icon_de_yao.png"></image>
+                        <text class="f-text">摇一摇</text>
+                    </div>
+    
+                </div>
+    </div>
+
+</template>
+<style>
+
+    #main{
+        background-color: #dddddd;
+        width: 100%;
+        flex-direction: column
+    }
+    .friends{
+        justify-content: space-between;
+    }
+    .f-items{
+        background-color: #ffffff;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        margin-top: 40px;
+        
+    }
+    .f-items .f-icon{
+       width: 60px;
+       height: 60px;
+       margin-left: 30px;
+    }
+    .f-items .f-icon-r{
+       width: 70px;
+       height: 70px;
+       margin-right: 30px;
+    }
+    .f-items .f-text{
+       margin-left: 25px;
+       font-size: 30px
+    }
+    .f-item-m{
+        margin-top: 0px;
+        border-top-width: 1px;
+        border-top-color: #eeeeee
+    }
+</style>
+<script>
+
+</script>

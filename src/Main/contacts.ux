@@ -1,0 +1,139 @@
+<template>
+        <div class="weixin-page">
+            <stack>
+                    <list class="tutorial-page" onscrollbottom="loadMoreData">
+                            <block for="weixinList">
+                              <list-item type="weixin" class="content-item">
+                                  <div class="left">
+                                        <image class="img" src="{{$item.img}}"></image>
+                                        <div class="texts">
+                                                <text class="name">{{$item.name}}</text>
+                                        </div>
+                                        
+                                  </div>
+                              </list-item>
+                            </block>
+                          </list>
+
+                          <div class="show-letter-container" id="" show="{{showALetter}}"> 
+                                <text>{{letter}}</text>
+                              </div>
+                
+                              <div class="letters" id="letters" show="{{showLetters}}" >
+                                <a class="letter" for="{{letters}}" @click="onClick">
+                                    {{$item}}
+                                </a>
+                            </div>
+
+            </stack>
+
+
+
+        </div>
+      </template>
+    
+      <style>
+          .show-letter-container{
+              width: 100%;
+              height: 200px;
+              margin-top: 300px;
+              justify-content: center;
+          }
+          .show-letter-container text{
+              width: 200px;
+              height: 200px;
+              text-align: center;
+              font-size: 80px;
+              color: #ffffff;
+              background-color: rgba(0,0,0,0.7);
+          }
+          .content-item{
+              align-items: center;
+              justify-content: space-between;
+              padding: 20px;
+              border-bottom-color: #eeeeee;
+              border-bottom-width: 1px;
+               
+    
+          }
+
+          .content-item > .left{
+              align-items: center
+          }
+          .content-item > .left>.img{
+              width: 80px;
+              height: 80px;
+          }
+          .content-item > .left>.texts{
+              flex-direction: column;
+              margin-left: 20px;
+          }
+          .content-item > .left .name{
+              color: #000000;
+              font-size: 36px;
+          }
+          .content-item > .left .msg{
+            font-size: 30px;
+            color: #aaaaaa;
+          }
+          .letters{
+              flex-direction: column;
+              width: 50px;
+              height: 800px;
+              position: fixed;
+              color:#000000;
+              right: 0px;
+              top: 100px;
+
+          }
+          .letters .letter{
+            width: 50px;
+              height: 300px;
+          }
+          .letters a{
+              font-size: 28px;
+              color: #000000
+
+          }
+    
+      </style>
+      <script>
+          import device from '@system.device'
+        // 子组件
+        export default {
+          data: {
+            showLetters:false,
+            showALetter:false,
+            letter:"",
+            letters:["A","B","C","D","E","F","G","H","I","G","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+            weixinList:[{img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=75a332731fa281df834a4fb0330be9c6&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2F3307a798-a465-4bef-a756-65e6cdff81b3.jpg",name:"妹子"},
+                        {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=5c4499224d9c6769161d7fca2d0d5ff9&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F6f061d950a7b0208503bfaae65d9f2d3562cc88b.jpg",name:"妹子"},
+                        {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=581793290d47478e9f95c0f3fe33c31a&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fb219ebc4b74543a9f0894bc216178a82b9011429.jpg",name:"妹子"},
+                        {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=2c29152a91042d8b1455db93ac11f3f7&imgtype=0&src=http%3A%2F%2Fp1.qqyou.com%2Ftouxiang%2FUploadPic%2F2015-4%2F16%2F2015041615174376891.jpg",name:"妹子"},
+                        {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=699fd0c38a27d98d663e5d23cc7042ce&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F5%2Fijivogqq.jpg",name:"妹子"},
+                        {img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521958161935&di=b1798fec677b8a0e24f77027b351ab03&imgtype=0&src=http%3A%2F%2Fp1.qzone.la%2Fupload%2F20150108%2Fpl73m0q6.jpg",name:"妹子"},]
+          },
+          onInit () {
+            this.$on('evtLetters',this.evtTypeHandler)
+          },
+          onReady(){
+
+          },
+
+          evtTypeHandler (evt) {
+             this.showLetters = evt.detail.params
+        },
+
+          onClick(evt){
+              console.info(evt.target.attr.value);
+              this.showALetter = true;
+              this.letter = evt.target.attr.value;
+
+              var _this = this;
+              setTimeout(function(){
+                _this.showALetter = false;
+              },1000);
+          }
+        }
+
+      </script>

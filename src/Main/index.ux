@@ -1,6 +1,8 @@
 
 <import name="comp-weixin" src="./weixin"></import>
 <import name="comp-contacts" src="./contacts"></import>
+<import name="comp-friends" src="./friends"></import>
+<import name="comp-me" src="./me"></import>
 
 
 <template>
@@ -19,13 +21,13 @@
                             <comp-weixin></comp-weixin>
                           </div>
                           <div class="tab-content-section">
-                              <comp-contacts></comp-contacts>
+                              <comp-contacts ></comp-contacts>
                           </div>
                           <div class="tab-content-section">
-                            <text>发现</text>
+                              <comp-friends ></comp-friends>
                           </div>
                           <div class="tab-content-section">
-                                <text>我</text>
+                                <comp-me ></comp-me>
                               </div>
                         </tab-content>
                       </tabs>
@@ -42,8 +44,6 @@
     </div>
     </template>
     <style>
-
-
     #main{
         flex-direction: column;
     }
@@ -55,8 +55,8 @@
         
     }
     #title>#name{
-        font-size: 48px;
-        margin-left: 40px;
+        font-size: 40px;
+        margin-left: 30px;
         color: #FFFFFF;
 
     }
@@ -64,7 +64,7 @@
     #title>.actions{
         height: 100%;
         align-items: center;
-        margin-right: 50px;
+        margin-right: 30px;
     }
     .search{
         width: 50px;
@@ -90,7 +90,7 @@
     }
     #tab .active{
 
-        color: #008000
+        color: #45c01a
 
     }
     .tab-item{
@@ -102,20 +102,20 @@
        flex-grow: 1;
    }
    .tab-item text{
-       color: #000000;
+       color: #999999;
        font-size: 30px;
        lines:1;
        
    }
     
-    </style>
+</style>
     <script>
   import router from '@system.router'
-
+  import device from '@system.device'
 export default {
   data: {
     currentIndex: 0,
-    showLetters:false,
+    letterLeft:0,
     tabItems: [
             {
               name: '微信',
@@ -137,25 +137,22 @@ export default {
             }
           ]
   },
+
+  onInit(){
+    
+  },
+ 
+  onReady(){
+    this.$element('name').style.backgroundColor="#ffffff"
+  },
   changeTabactive (evt) {
     this.currentIndex = evt.index
-    if(this.currentIndex==1){
 
-      this.showLetters=true;
-
-    }else{
-      this.showLetters=false;
-    }
+     this.$broadcast('evtLetters', { params: this.currentIndex==1 })
   },
   clickTabBar (index) {
     this.currentIndex = index
-    if(this.currentIndex==1){
-
-this.showLetters=true;
-
-}else{
-this.showLetters=false;
-}
+    this.$broadcast('evtLetters', { params: this.currentIndex==1 })
   },
   routePage (param) {
     router.push({
