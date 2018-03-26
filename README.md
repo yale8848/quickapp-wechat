@@ -1,12 +1,17 @@
 # 快应用实现的微信
 
-> 本项目不求完全实现微信功能，目的是熟悉和学习快应用开发，欢迎大家star,fork,PR
+> 欢迎大家一起学习快应用开发
 
 <img src="./assets/0.png" width="50%" height="50%" />
 <img src="./assets/1.png" width="50%" height="50%" />
 <img src="./assets/2.png" width="50%" height="50%" />
 <img src="./assets/3.png" width="50%" height="50%" />
 <img src="./assets/4.png" width="50%" height="50%" />
+
+## 目前进度
+
+- [x] 基本UI
+- [ ] 详细功能
 
 
 ## 快应用开发中发现的问题：
