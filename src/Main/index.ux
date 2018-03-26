@@ -1,19 +1,16 @@
-
-<import name="comp-weixin" src="./weixin"></import>
+<import name="comp-weixin" src="./weixin">
+</import>
 <import name="comp-contacts" src="./contacts"></import>
 <import name="comp-friends" src="./friends"></import>
 <import name="comp-me" src="./me"></import>
 
+<import name="comp-title" src="../Title">
+</import>
 
 <template>
     <div id="main">
-        <div id="title">
-            <text id="name">微信</text>
-            <div class="actions">
-                    <div class="search"></div>
-                    <div class="plus"></div>
-            </div>
-        </div>
+         
+        <comp-title show-back="false" show-text="true" show-plus="true" show-search="true" text="微信"></comp-title>
         <div id="container">
                 <tabs onchange="changeTabactive" index="{{currentIndex}}">
                         <tab-content class="flexible-tab-content">
@@ -43,121 +40,87 @@
         </div>
     </div>
     </template>
-    <style>
-    #main{
+<style>
+    #main {
         flex-direction: column;
     }
-    #title{
-        background-color:#272727;
-        height: 100px;
-        align-items: center;
-        justify-content:space-between
-        
-    }
-    #title>#name{
-        font-size: 40px;
-        margin-left: 30px;
-        color: #FFFFFF;
-
-    }
-
-    #title>.actions{
-        height: 100%;
-        align-items: center;
-        margin-right: 30px;
-    }
-    .search{
-        width: 50px;
-        height: 50px;
-        background-image: url(/Common/Image/search.png);
-        margin-right: 50px;
-    }
-    .plus{
-        width: 40px;
-        height: 40px;
-        background-image: url(/Common/Image/plus.png);
-    }
-    #container{
-        background-color:#ffffff;
-        flex-grow:1;
+    
+    #container {
+        background-color: #ffffff;
+        flex-grow: 1;
         justify-content: center;
         align-items: center;
     }
-    #tab{
+    
+    #tab {
         height: 110px;
         border-top-color: #aaaaaa;
         border-top-width: 1px;
     }
-    #tab .active{
-
+    
+    #tab .active {
         color: #45c01a
-
     }
-    .tab-item{
-       background-color: #ffffff;
-       height: 100%;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       flex-grow: 1;
-   }
-   .tab-item text{
-       color: #999999;
-       font-size: 30px;
-       lines:1;
-       
-   }
     
+    .tab-item {
+        background-color: #ffffff;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+    
+    .tab-item text {
+        color: #999999;
+        font-size: 30px;
+        lines: 1;
+    }
 </style>
-    <script>
-  import router from '@system.router'
-  import device from '@system.device'
-export default {
-  data: {
-    currentIndex: 0,
-    letterLeft:0,
-    tabItems: [
-            {
-              name: '微信',
-              icons: ['/Common/Image/weixin_normal.png', '/Common/Image/weixin_pressed.png']
-            },
-            {
-              name: '通信录',
-              icons: ['/Common/Image/contact_list_normal.png', '/Common/Image/contact_list_pressed.png']
-            }
-            ,
-            {
-              name: '发现',
-              icons: ['/Common/Image/find_normal.png', '/Common/Image/find_pressed.png']
-            }
-            ,
-            {
-              name: '我',
-              icons: ['/Common/Image/profile_normal.png', '/Common/Image/profile_pressed.png']
-            }
-          ]
-  },
+<script>
+    import router from '@system.router'
+    import device from '@system.device'
+    export default {
+        data: {
+            currentIndex: 0,
+            letterLeft: 0,
+            tabItems: [{
+                name: '微信',
+                icons: ['/Common/Image/weixin_normal.png', '/Common/Image/weixin_pressed.png']
+            }, {
+                name: '通信录',
+                icons: ['/Common/Image/contact_list_normal.png', '/Common/Image/contact_list_pressed.png']
+            }, {
+                name: '发现',
+                icons: ['/Common/Image/find_normal.png', '/Common/Image/find_pressed.png']
+            }, {
+                name: '我',
+                icons: ['/Common/Image/profile_normal.png', '/Common/Image/profile_pressed.png']
+            }]
+        },
 
-  onInit(){
-    
-  },
- 
-  onReady(){
-    this.$element('name').style.backgroundColor="#ffffff"
-  },
-  changeTabactive (evt) {
-    this.currentIndex = evt.index
+        onInit() {
 
-     this.$broadcast('evtLetters', { params: this.currentIndex==1 })
-  },
-  clickTabBar (index) {
-    this.currentIndex = index
-    this.$broadcast('evtLetters', { params: this.currentIndex==1 })
-  },
-  routePage (param) {
-    router.push({
-      uri: param
-    })
-  }
-}
-    </script>
+        },
+
+        onReady() {},
+        changeTabactive(evt) {
+            this.currentIndex = evt.index
+
+            this.$broadcast('evtLetters', {
+                params: this.currentIndex == 1
+            })
+        },
+        clickTabBar(index) {
+            this.currentIndex = index
+            this.$broadcast('evtLetters', {
+                params: this.currentIndex == 1
+            })
+        },
+        routePage(param) {
+            router.push({
+                uri: param
+            })
+        }
+    }
+</script>

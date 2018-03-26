@@ -1,0 +1,37 @@
+#title {
+    background-color: #272727;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between
+}
+
+#title #name {
+    font-size: 40px;
+    margin-left: 30px;
+    color: #FFFFFF;
+}
+
+#title #back {
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+}
+
+#title>.actions {
+    height: 100%;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.search {
+    width: 50px;
+    height: 50px;
+    background-image: url(/Common/Image/search.png);
+    margin-right: 50px;
+}
+
+.plus {
+    width: 40px;
+    height: 40px;
+    background-image: url(/Common/Image/plus.png);
+}

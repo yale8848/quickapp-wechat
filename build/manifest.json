@@ -17,6 +17,9 @@
     },
     {
       "name": "system.shortcut"
+    },
+    {
+      "name": "system.webview"
     }
   ],
   "permissions": [
@@ -44,6 +47,12 @@
       },
       "About": {
         "component": "index"
+      },
+      "GZH": {
+        "component": "index"
+      },
+      "Web": {
+        "component": "index"
       }
     }
   },
@@ -68,6 +77,12 @@
       },
       "About": {
         "menu": false
+      },
+      "GZH": {
+        "titleBar": false
+      },
+      "Web": {
+        "titleBar": false
       }
     }
   }

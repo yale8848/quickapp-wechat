@@ -1,0 +1,41 @@
+.content-item {
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom-color: #eeeeee;
+    border-bottom-width: 1px;
+}
+
+.content-item>.right {
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-item>.right text {
+    color: #aaaaaa;
+    font-size: 30px;
+}
+
+.content-item>.left {
+    align-items: center
+}
+
+.content-item>.left>.img {
+    width: 80px;
+    height: 80px;
+}
+
+.content-item>.left>.texts {
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.content-item>.left .name {
+    color: #000000;
+    font-size: 36px;
+}
+
+.content-item>.left .msg {
+    font-size: 28px;
+    color: #aaaaaa;
+}

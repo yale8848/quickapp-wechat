@@ -48,7 +48,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_script$ = __webpack_require__(32)
+	var $app_script$ = __webpack_require__(42)
 	
 	$app_define$('@app-application/app', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -62,7 +62,7 @@
 
 /***/ },
 
-/***/ 32:
+/***/ 42:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';
@@ -71,7 +71,7 @@
 	  value: true
 	});
 	
-	var _util = __webpack_require__(33);
+	var _util = __webpack_require__(43);
 	
 	var _util2 = _interopRequireDefault(_util);
 	
@@ -79,18 +79,18 @@
 	
 	var globalRef = global.__proto__ || global;
 	
-	globalRef.regeneratorRuntime = __webpack_require__(34);
+	globalRef.regeneratorRuntime = __webpack_require__(44);
 	
 	exports.default = {
 	  showMenu: _util2.default.showMenu,
 	  createShortcut: _util2.default.createShortcut
 	};
-	(exports.default || module.exports).manifest = {"package":"com.application.demo","name":"quickapp-wechat","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/Image//logo.png","features":[{"name":"system.prompt"},{"name":"system.device"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug"},"router":{"entry":"Welcome","pages":{"Welcome":{"component":"index"},"Main":{"component":"index"},"Demo":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#272727","titleBarTextColor":"#414141","menu":true,"pages":{"Welcome":{"fullScreen":true,"titleBar":false},"Main":{"titleBar":false},"Demo":{"titleBarText":"示例页","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false}}}};
+	(exports.default || module.exports).manifest = {"package":"com.application.demo","name":"quickapp-wechat","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/Image//logo.png","features":[{"name":"system.prompt"},{"name":"system.device"},{"name":"system.router"},{"name":"system.shortcut"},{"name":"system.webview"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug"},"router":{"entry":"Welcome","pages":{"Welcome":{"component":"index"},"Main":{"component":"index"},"Demo":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"},"GZH":{"component":"index"},"Web":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#272727","titleBarTextColor":"#414141","menu":true,"pages":{"Welcome":{"fullScreen":true,"titleBar":false},"Main":{"titleBar":false},"Demo":{"titleBarText":"示例页","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false},"GZH":{"titleBar":false},"Web":{"titleBar":false}}}};
 	}
 
 /***/ },
 
-/***/ 33:
+/***/ 43:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -162,15 +162,15 @@
 
 /***/ },
 
-/***/ 34:
+/***/ 44:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(35);
+	module.exports = __webpack_require__(45);
 
 
 /***/ },
 
-/***/ 35:
+/***/ 45:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -195,7 +195,7 @@
 	// Force reevalutation of runtime.js.
 	g.regeneratorRuntime = undefined;
 	
-	module.exports = __webpack_require__(36);
+	module.exports = __webpack_require__(46);
 	
 	if (hadRuntime) {
 	  // Restore the original runtime.
@@ -212,7 +212,7 @@
 
 /***/ },
 
-/***/ 36:
+/***/ 46:
 /***/ function(module, exports) {
 
 	/**
@@ -954,7 +954,7 @@
   else {
     window.createAppHandler = createAppHandler
     // H5注入manifest以获取features
-    global.manifest = {"package":"com.application.demo","name":"quickapp-wechat","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/Image//logo.png","features":[{"name":"system.prompt"},{"name":"system.device"},{"name":"system.router"},{"name":"system.shortcut"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug"},"router":{"entry":"Welcome","pages":{"Welcome":{"component":"index"},"Main":{"component":"index"},"Demo":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#272727","titleBarTextColor":"#414141","menu":true,"pages":{"Welcome":{"fullScreen":true,"titleBar":false},"Main":{"titleBar":false},"Demo":{"titleBarText":"示例页","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false}}}};
+    global.manifest = {"package":"com.application.demo","name":"quickapp-wechat","versionName":"1.0.0","versionCode":"1","minPlatformVersion":"101","icon":"/Common/Image//logo.png","features":[{"name":"system.prompt"},{"name":"system.device"},{"name":"system.router"},{"name":"system.shortcut"},{"name":"system.webview"}],"permissions":[{"origin":"*"}],"config":{"logLevel":"debug"},"router":{"entry":"Welcome","pages":{"Welcome":{"component":"index"},"Main":{"component":"index"},"Demo":{"component":"index"},"DemoDetail":{"component":"index"},"About":{"component":"index"},"GZH":{"component":"index"},"Web":{"component":"index"}}},"display":{"titleBarBackgroundColor":"#272727","titleBarTextColor":"#414141","menu":true,"pages":{"Welcome":{"fullScreen":true,"titleBar":false},"Main":{"titleBar":false},"Demo":{"titleBarText":"示例页","menu":false},"DemoDetail":{"titleBarText":"详情页"},"About":{"menu":false},"GZH":{"titleBar":false},"Web":{"titleBar":false}}}};
   }
 })();
 //# sourceMappingURL=app.js.map

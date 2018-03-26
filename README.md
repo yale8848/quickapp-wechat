@@ -7,12 +7,15 @@
 <img src="./assets/2.png" width="50%" height="50%" />
 <img src="./assets/3.png" width="50%" height="50%" />
 <img src="./assets/4.png" width="50%" height="50%" />
+<img src="./assets/5.png" width="50%" height="50%" />
+<img src="./assets/6.png" width="50%" height="50%" />
 
 ## 目前进度
 
 - [x] 基本UI
 - [ ] 详细功能
 
+## [入门教程](https://juejin.im/post/5ab4d4c36fb9a028b92d149c) 
 
 ## 快应用开发中发现的问题：
 

@@ -4,29 +4,24 @@
 </div>
 </template>
 <style>
-
-    #main{
+    #main {
         background-image: url(/Common/Image/lanucher.jpg);
         background-size: cover;
     }
-
 </style>
 <script>
-
     import router from '@system.router'
 
 
 
 
-  export default {
-    onInit () {
-        setTimeout(function(){
-    router.replace ({
-        uri: '/Main'
-      })
-  },1000)
+    export default {
+        onInit() {
+            setTimeout(function() {
+                router.replace({
+                    uri: '/Main'
+                })
+            }, 1000)
+        }
     }
-  }
-
-
 </script>

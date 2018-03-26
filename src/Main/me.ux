@@ -42,67 +42,67 @@
     </div>
 </template>
 <style>
-    #main{
+    #main {
         background-color: #dddddd;
         width: 100%;
         flex-direction: column
     }
-    #info{
+    
+    #info {
         width: 100%;
         padding-right: 40px;
-        justify-content:space-between;
+        justify-content: space-between;
         margin-top: 40px;
-
-
     }
-    .head{
+    
+    .head {
         width: 120px;
         height: 120px;
     }
-    .names{
+    
+    .names {
         margin-left: 20px;
         flex-direction: column;
-
     }
-    .name{
+    
+    .name {
         font-size: 28px;
         color: #000000;
     }
-    .it-name{
-        color: #000000;
-    }
-    .wname{
+    
+    .wname {
         font-size: 24px;
         margin-top: 10px;
         color: #cccccc;
     }
-
-    .qr{
+    
+    .qr {
         width: 50px;
         height: 50px;
     }
-    .item{
+    
+    .item {
         background-color: #ffffff;
         padding: 20px;
         align-items: center;
-       
     }
-    .it-image{
+    
+    .it-image {
         width: 50px;
         height: 50px;
         margin-left: 18px;
     }
-    .it-name{
+    
+    .it-name {
         margin-left: 30px;
         font-size: 26px;
+        color: #000000;
     }
-    .item-one{
+    
+    .item-one {
         margin-top: 40px;
         margin-bottom: 40px;
     }
-
-
 </style>
 <script>
-
 </script>

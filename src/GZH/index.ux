@@ -1,0 +1,62 @@
+<import name="comp-title" src="../Title">
+</import>
+
+<template>
+        <div class="gzh-page">
+                <comp-title show-back="true" show-text="true" show-plus="false" show-search="false" text="订阅号"></comp-title>
+            <list class="tutorial-page" >
+                <block for="weixinList">
+                  <list-item type="weixin" class="content-item" onclick="route($item.type)">
+                      <div class="left">
+                            <image class="img" src="{{$item.img}}"></image>
+                            <div class="texts">
+                                    <text class="name">{{$item.name}}</text>
+                                    <text class="msg">{{$item.text}}</text>
+                            </div>
+                            
+                      </div>
+                      <div class="right">
+                            <text>{{$item.time}}</text>
+                      </div>
+                    
+                   
+                  </list-item>
+                </block>
+              </list>
+        </div>
+      </template>
+
+<style>
+    @import '../Common/css/list.css';
+    .gzh-page {
+        flex-direction: column
+    }
+</style>
+<script>
+    import router from '@system.router'
+    export default {
+
+        data: {
+            weixinList: [{
+                img: "/Common/Image/logo.png",
+                name: "订阅号",
+                text: "快应用栈",
+                time: "3月23日",
+                type: 1
+            }]
+        },
+        onInit() {
+
+        },
+        route(type) {
+            if (typeof type != "undefined") {
+                router.push({
+                    uri: '/Web',
+                    params: {
+                        src: "https://mp.weixin.qq.com/s/DBv57G-OEMIpHJDTCFNQvw"
+                    }
+                })
+            }
+        }
+    }
+</script>

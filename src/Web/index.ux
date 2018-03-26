@@ -1,0 +1,49 @@
+<import name="comp-title" src="../Title">
+</import>
+
+<template>
+        <div id="main">
+                <comp-title show-back="true" show-text="true" show-plus="false" show-search="false" text="{{title}}"></comp-title>
+
+                <web src="{{src}}" id="web" @titlereceive="onTitleReceive"></web>
+        </div>
+    </template>
+<style>
+    #main {
+        flex-direction: column
+    }
+</style>
+
+<script>
+    import router from '@system.router'
+    export default {
+        props: ['src'],
+        data: {
+            src: "",
+            title: ""
+        },
+        onInit() {
+
+        },
+        onReady() {
+
+        },
+        onBackPress() {
+            this.$element('web').canBack({
+                callback: function(e) {
+                    if (e) {
+                        // 加载历史列表中的上一个 URL
+                        this.$element('web').back()
+                    } else {
+                        router.back()
+                    }
+                }.bind(this)
+            })
+            return true // 阻止默认行为，等待异步操作
+        },
+        onTitleReceive(t) {
+            this.title = t.title
+        }
+
+    }
+</script>

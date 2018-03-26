@@ -1,0 +1,18 @@
+<template>
+    <div id="main">
+
+    </div>
+</template>
+<style>
+    #main {
+        flex-direction: column
+    }
+</style>
+
+
+<script>
+    import router from '@system.router'
+    export default {
+
+    }
+</script>
