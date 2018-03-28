@@ -4,7 +4,7 @@
   "versionName": "1.0.0",
   "versionCode": "1",
   "minPlatformVersion": "101",
-  "icon": "/Common/Image//logo.png",
+  "icon": "/Common/Image/logo.png",
   "features": [
     {
       "name": "system.prompt"
@@ -20,6 +20,9 @@
     },
     {
       "name": "system.webview"
+    },
+    {
+      "name": "system.prompt"
     }
   ],
   "permissions": [
@@ -53,6 +56,12 @@
       },
       "Web": {
         "component": "index"
+      },
+      "Demo/comm": {
+        "component": "father"
+      },
+      "Demo/comm2": {
+        "component": "father"
       }
     }
   },

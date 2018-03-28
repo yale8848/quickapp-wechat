@@ -1,0 +1,65 @@
+<template>
+        <div id="main">
+            <text>son area: </text>
+            <div class="say">
+                    <text>father say : {{say}} </text>>
+            </div>
+            <div >
+                    <input class="btn" type="button" value="say hi" onclick="sayFather('hi')"/>
+                    <input class="btn" type="button" value="say father" onclick="sayFather('father')"/>
+            </div>
+   
+        </div>
+    </template>
+<style>
+    #main {
+        width: 100%;
+        height: 300px;
+        border: 1px solid;
+        flex-direction: column
+    }
+    
+    .btn {
+        height: 80px;
+        background-color: #09ba07;
+        font-size: 30px;
+        color: #ffffff;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    
+    .say {
+        width: 100%;
+        flex-grow: 1;
+        justify-content: center;
+    }
+</style>
+<script>
+    import router from '@system.router'
+    export default {
+
+        data: {
+            say: ""
+        },
+        sayMsg(evt) {
+
+            this.say = evt.detail.msg
+
+        },
+        onInit() {
+            this.$on("fatherSay", this.sayMsg)
+        },
+        sayFather(t) {
+            // this.$emit('sonSay', {
+            //    msg: t
+            // })
+
+            this.$dispath('sonSay', {
+                msg: t
+            })
+        }
+
+
+    }
+</script>

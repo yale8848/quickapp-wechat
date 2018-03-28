@@ -47,14 +47,14 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(17)
-	__webpack_require__(21)
-	__webpack_require__(25)
-	__webpack_require__(29)
-	__webpack_require__(10)
-	var $app_template$ = __webpack_require__(33)
-	var $app_style$ = __webpack_require__(34)
-	var $app_script$ = __webpack_require__(35)
+	__webpack_require__(35)
+	__webpack_require__(39)
+	__webpack_require__(43)
+	__webpack_require__(47)
+	__webpack_require__(28)
+	var $app_template$ = __webpack_require__(51)
+	var $app_style$ = __webpack_require__(52)
+	var $app_script$ = __webpack_require__(53)
 	
 	$app_define$('@app-component/index', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -78,12 +78,30 @@
 /* 7 */,
 /* 8 */,
 /* 9 */,
-/* 10 */
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(11)
-	var $app_style$ = __webpack_require__(12)
-	var $app_script$ = __webpack_require__(13)
+	var $app_template$ = __webpack_require__(29)
+	var $app_style$ = __webpack_require__(30)
+	var $app_script$ = __webpack_require__(31)
 	
 	$app_define$('@app-component/comp-title', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -96,7 +114,7 @@
 
 
 /***/ },
-/* 11 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -167,7 +185,7 @@
 	}
 
 /***/ },
-/* 12 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -270,7 +288,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';
@@ -295,15 +313,15 @@
 	};}
 
 /***/ },
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(18)
-	var $app_style$ = __webpack_require__(19)
-	var $app_script$ = __webpack_require__(20)
+	var $app_template$ = __webpack_require__(36)
+	var $app_style$ = __webpack_require__(37)
+	var $app_script$ = __webpack_require__(38)
 	
 	$app_define$('@app-component/comp-weixin', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -316,7 +334,7 @@
 
 
 /***/ },
-/* 18 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -420,7 +438,7 @@
 	}
 
 /***/ },
-/* 19 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -658,7 +676,7 @@
 	}
 
 /***/ },
-/* 20 */
+/* 38 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){"use strict";
@@ -725,12 +743,12 @@
 	};}
 
 /***/ },
-/* 21 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(22)
-	var $app_style$ = __webpack_require__(23)
-	var $app_script$ = __webpack_require__(24)
+	var $app_template$ = __webpack_require__(40)
+	var $app_style$ = __webpack_require__(41)
+	var $app_script$ = __webpack_require__(42)
 	
 	$app_define$('@app-component/comp-contacts', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -743,7 +761,7 @@
 
 
 /***/ },
-/* 22 */
+/* 40 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -873,7 +891,7 @@
 	}
 
 /***/ },
-/* 23 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1199,7 +1217,7 @@
 	}
 
 /***/ },
-/* 24 */
+/* 42 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){"use strict";
@@ -1260,12 +1278,12 @@
 	};}
 
 /***/ },
-/* 25 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(26)
-	var $app_style$ = __webpack_require__(27)
-	var $app_script$ = __webpack_require__(28)
+	var $app_template$ = __webpack_require__(44)
+	var $app_style$ = __webpack_require__(45)
+	var $app_script$ = __webpack_require__(46)
 	
 	$app_define$('@app-component/comp-friends', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -1278,7 +1296,7 @@
 
 
 /***/ },
-/* 26 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1403,7 +1421,7 @@
 	}
 
 /***/ },
-/* 27 */
+/* 45 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1507,18 +1525,18 @@
 	}
 
 /***/ },
-/* 28 */
+/* 46 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){"use strict";}
 
 /***/ },
-/* 29 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $app_template$ = __webpack_require__(30)
-	var $app_style$ = __webpack_require__(31)
-	var $app_script$ = __webpack_require__(32)
+	var $app_template$ = __webpack_require__(48)
+	var $app_style$ = __webpack_require__(49)
+	var $app_script$ = __webpack_require__(50)
 	
 	$app_define$('@app-component/comp-me', [], function($app_require$, $app_exports$, $app_module$){
 	     $app_script$($app_module$, $app_exports$, $app_require$)
@@ -1531,7 +1549,7 @@
 
 
 /***/ },
-/* 30 */
+/* 48 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1772,7 +1790,7 @@
 	}
 
 /***/ },
-/* 31 */
+/* 49 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1833,13 +1851,13 @@
 	}
 
 /***/ },
-/* 32 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){"use strict";}
 
 /***/ },
-/* 33 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1986,7 +2004,7 @@
 	}
 
 /***/ },
-/* 34 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2062,7 +2080,7 @@
 	}
 
 /***/ },
-/* 35 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = function(module, exports, $app_require$){'use strict';

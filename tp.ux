@@ -1,6 +1,5 @@
 <template>
     <div id="main">
-
     </div>
 </template>
 <style>
@@ -8,8 +7,6 @@
         flex-direction: column
     }
 </style>
-
-
 <script>
     import router from '@system.router'
     export default {

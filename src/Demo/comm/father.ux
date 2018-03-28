@@ -1,0 +1,54 @@
+<import name="son" src="./son"></import>
+<template>
+    <div id="main">
+        <son @son-say="sayMsg"></son>
+        <div class="father">
+                <text>father area: </text>
+                <div class="say">
+                        <text>son say:{{say}}</text>
+                </div>
+        </div>
+    </div>
+</template>
+<style>
+    #main {
+        flex-direction: column;
+    }
+    
+    .father {
+        width: 100%;
+        margin-top: 20px;
+        height: 300px;
+        border: 1px solid;
+        flex-direction: column
+    }
+    
+    .say {
+        width: 100%;
+        flex-grow: 1;
+        justify-content: center;
+    }
+</style>
+<script>
+    import router from '@system.router'
+    import prompt from '@system.prompt'
+    export default {
+        data: {
+            say: ""
+        },
+        onInit() {
+            this.$on("sonSay", this.sayMsg)
+        },
+        sayMsg(evt) {
+
+            this.say = evt.detail.msg
+
+            if (this.say === 'father') {
+                this.$broadcast('fatherSay', {
+                    msg: "son"
+                })
+            }
+
+        }
+    }
+</script>

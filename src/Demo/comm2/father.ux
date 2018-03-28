@@ -1,0 +1,49 @@
+<import name="son1" src="./son"></import>
+<import name="son2" src="./son2"></import>
+<template>
+    <div id="main">
+        <son1 id="son1"></son1>
+        <son2 id="son2"></son2>
+        <div class="father">
+                <text>father area: </text>
+                <div class="say">
+                       
+                </div>
+        </div>
+    </div>
+</template>
+<style>
+    #main {
+        flex-direction: column;
+    }
+    
+    .father {
+        width: 100%;
+        margin-top: 20px;
+        height: 300px;
+        border: 1px solid;
+        flex-direction: column
+    }
+    
+    .say {
+        width: 100%;
+        flex-grow: 1;
+        justify-content: center;
+    }
+</style>
+<script>
+    import router from '@system.router'
+    import prompt from '@system.prompt'
+    export default {
+        data: {},
+        onReady() {
+            const vm1 = this.$vm('son1')
+            const vm2 = this.$vm('son2')
+
+            vm1.parentVm = this
+            vm1.nextVm = vm2
+            vm2.parentVm = this
+            vm2.previousVm = vm1
+        }
+    }
+</script>
