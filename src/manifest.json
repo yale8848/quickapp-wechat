@@ -20,7 +20,7 @@
         "logLevel": "debug"
     },
     "router": {
-        "entry": "Demo/comm",
+        "entry": "Welcome",
         "pages": {
             "Welcome": {
                 "component": "index"
