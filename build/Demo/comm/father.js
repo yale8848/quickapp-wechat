@@ -146,6 +146,19 @@
 	          "events": {
 	            "click": function (evt) {this.sayFather('father',evt)}
 	          }
+	        },
+	        {
+	          "type": "input",
+	          "attr": {
+	            "type": "button",
+	            "value": "BroadcastChannel say father"
+	          },
+	          "classList": [
+	            "btn"
+	          ],
+	          "events": {
+	            "click": function (evt) {this.sayFather2('father',evt)}
+	          }
 	        }
 	      ]
 	    }
@@ -205,7 +218,8 @@
 	exports.default = {
 	
 	    data: {
-	        say: ""
+	        say: "",
+	        sayEvent: null
 	    },
 	    sayMsg: function sayMsg(evt) {
 	
@@ -213,12 +227,25 @@
 	    },
 	    onInit: function onInit() {
 	        this.$on("fatherSay", this.sayMsg);
+	
+	        this.sayEvent = new BroadcastChannel('say');
+	        var _this = this;
+	        this.sayEvent.onmessage = function (event) {
+	            console.log('son say');
+	            _this.say = event.data;
+	        };
 	    },
 	    sayFather: function sayFather(t) {
-	
-	        this.$dispath('sonSay', {
+	        this.$emit('sonSay', {
 	            msg: t
 	        });
+	    },
+	    sayFather2: function sayFather2(t) {
+	
+	        this.sayEvent.postMessage(t);
+	    },
+	    onDestroy: function onDestroy() {
+	        this.sayEvent.close();
 	    }
 	};}
 
@@ -306,7 +333,7 @@
 	module.exports = function(module, exports, $app_require$){'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -322,22 +349,33 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  data: {
-	    say: ""
-	  },
-	  onInit: function onInit() {
-	    this.$on("sonSay", this.sayMsg);
-	  },
-	  sayMsg: function sayMsg(evt) {
+	    data: {
+	        say: "",
+	        sayEvent: null
+	    },
+	    onInit: function onInit() {
+	        this.$on("sonSay", this.sayMsg);
+	        this.sayEvent = new BroadcastChannel('say');
+	        var _this = this;
+	        this.sayEvent.onmessage = function (event) {
+	            console.log('fater say');
+	            _this.say = event.data;
+	            _this.sayEvent.postMessage('im fater');
+	        };
+	    },
+	    sayMsg: function sayMsg(evt) {
 	
-	    this.say = evt.detail.msg;
+	        this.say = evt.detail.msg;
 	
-	    if (this.say === 'father') {
-	      this.$broadcast('fatherSay', {
-	        msg: "son"
-	      });
+	        if (this.say === 'father') {
+	            this.$broadcast('fatherSay', {
+	                msg: "son"
+	            });
+	        }
+	    },
+	    onDestroy: function onDestroy() {
+	        this.sayEvent.close();
 	    }
-	  }
 	};
 	
 	
@@ -345,23 +383,23 @@
 	var accessors = ['public', 'protected', 'private'];
 	
 	if (moduleOwn.data && accessors.some(function (acc) {
-	  return moduleOwn[acc];
+	    return moduleOwn[acc];
 	})) {
-	  throw new Error('页面VM对象中的属性data不可与"' + accessors.join(',') + '"同时存在，请使用private替换data名称');
+	    throw new Error('页面VM对象中的属性data不可与"' + accessors.join(',') + '"同时存在，请使用private替换data名称');
 	} else if (!moduleOwn.data) {
-	  moduleOwn.data = {};
-	  moduleOwn._descriptor = {};
-	  accessors.forEach(function (acc) {
-	    var accType = _typeof(moduleOwn[acc]);
-	    if (accType === 'object') {
-	      moduleOwn.data = Object.assign(moduleOwn.data, moduleOwn[acc]);
-	      for (var name in moduleOwn[acc]) {
-	        moduleOwn._descriptor[name] = { access: acc };
-	      }
-	    } else if (accType === 'function') {
-	      console.warn('页面VM对象中的属性' + acc + '的值不能是函数，请使用对象');
-	    }
-	  });
+	    moduleOwn.data = {};
+	    moduleOwn._descriptor = {};
+	    accessors.forEach(function (acc) {
+	        var accType = _typeof(moduleOwn[acc]);
+	        if (accType === 'object') {
+	            moduleOwn.data = Object.assign(moduleOwn.data, moduleOwn[acc]);
+	            for (var name in moduleOwn[acc]) {
+	                moduleOwn._descriptor[name] = { access: acc };
+	            }
+	        } else if (accType === 'function') {
+	            console.warn('页面VM对象中的属性' + acc + '的值不能是函数，请使用对象');
+	        }
+	    });
 	}}
 
 /***/ }

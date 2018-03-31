@@ -3,10 +3,10 @@
     <div id="main">
         <son @son-say="sayMsg"></son>
         <div class="father">
-                <text>father area: </text>
-                <div class="say">
-                        <text>son say:{{say}}</text>
-                </div>
+            <text>father area: </text>
+            <div class="say">
+                <text>son say:{{say}}</text>
+            </div>
         </div>
     </div>
 </template>
@@ -14,7 +14,7 @@
     #main {
         flex-direction: column;
     }
-    
+
     .father {
         width: 100%;
         margin-top: 20px;
@@ -22,7 +22,7 @@
         border: 1px solid;
         flex-direction: column
     }
-    
+
     .say {
         width: 100%;
         flex-grow: 1;
@@ -34,10 +34,18 @@
     import prompt from '@system.prompt'
     export default {
         data: {
-            say: ""
+            say: "",
+            sayEvent:null,
         },
         onInit() {
-            this.$on("sonSay", this.sayMsg)
+            this.$on("sonSay", this.sayMsg);
+            this.sayEvent  = new BroadcastChannel('say')
+            const _this = this;
+            this.sayEvent .onmessage = function (event) {
+                console.log('fater say')
+                _this.say = event.data
+                _this.sayEvent.postMessage('im fater')
+            }
         },
         sayMsg(evt) {
 
@@ -49,6 +57,10 @@
                 })
             }
 
+        },
+        onDestroy(){
+            this.sayEvent.close()
         }
+
     }
 </script>

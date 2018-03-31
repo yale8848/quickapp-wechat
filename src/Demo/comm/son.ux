@@ -1,16 +1,17 @@
 <template>
-        <div id="main">
-            <text>son area: </text>
-            <div class="say">
-                    <text>father say : {{say}} </text>>
-            </div>
-            <div >
-                    <input class="btn" type="button" value="say hi" onclick="sayFather('hi')"/>
-                    <input class="btn" type="button" value="say father" onclick="sayFather('father')"/>
-            </div>
-   
+    <div id="main">
+        <text>son area: </text>
+        <div class="say">
+            <text>father say : {{say}} </text>>
         </div>
-    </template>
+        <div>
+            <input class="btn" type="button" value="say hi" onclick="sayFather('hi')" />
+            <input class="btn" type="button" value="say father" onclick="sayFather('father')" />
+            <input class="btn" type="button" value="BroadcastChannel say father" onclick="sayFather2('father')" />
+        </div>
+
+    </div>
+</template>
 <style>
     #main {
         width: 100%;
@@ -18,7 +19,7 @@
         border: 1px solid;
         flex-direction: column
     }
-    
+
     .btn {
         height: 80px;
         background-color: #09ba07;
@@ -28,7 +29,7 @@
         margin-bottom: 10px;
         padding: 10px;
     }
-    
+
     .say {
         width: 100%;
         flex-grow: 1;
@@ -40,7 +41,8 @@
     export default {
 
         data: {
-            say: ""
+            say: "",
+            sayEvent:null
         },
         sayMsg(evt) {
 
@@ -48,16 +50,30 @@
 
         },
         onInit() {
-            this.$on("fatherSay", this.sayMsg)
+            this.$on("fatherSay", this.sayMsg);
+
+            this.sayEvent = new BroadcastChannel('say')
+            const _this=this;
+            this.sayEvent.onmessage = function (event) {
+                console.log('son say')
+                _this.say = event.data
+            }
         },
         sayFather(t) {
-            // this.$emit('sonSay', {
-            //    msg: t
-            // })
-
-            this.$dispath('sonSay', {
+             this.$emit('sonSay', {
                 msg: t
-            })
+             })
+
+            //this.$dispath('sonSay', {
+            //    msg: t
+           // })
+        },
+        sayFather2(t) {
+ 
+            this.sayEvent.postMessage(t)
+        },
+        onDestroy(){
+            this.sayEvent.close()
         }
 
 
